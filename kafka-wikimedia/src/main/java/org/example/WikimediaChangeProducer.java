@@ -28,6 +28,7 @@ public class WikimediaChangeProducer {
         props.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        props.setProperty(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
 
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(props);
 
